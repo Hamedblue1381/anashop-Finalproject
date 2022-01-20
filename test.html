@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var monthlystatus=false;
+        var annualstatus=false;
+        function  monthly() {
+            if(monthlystatus==false)
+            {
+                document.getElementById('monthlypack').checked = true;
+                document.getElementById('annualpack').checked = false;
+                monthlystatus=true;
+                annualstatus=false;
+
+
+            }
+
+            else
+            {
+
+                document.getElementById('monthlypack').checked = false;
+
+                monthlystatus=false;
+
+            }
+        }
+        function annual() {
+            if(annualstatus==false)
+            {
+                document.getElementById('monthlypack').checked = false;
+                document.getElementById('annualpack').checked = true;
+                monthlystatus=false;
+                annualstatus=true;
+
+
+            }
+
+            else
+            {
+
+                document.getElementById('annualpack').checked = false;
+
+                annualstatus=false;
+
+            }
+        }
+    </script>
+</head>
+<body>
+<input type="checkbox" id="monthlypack" onclick="monthly()">
+<input type="checkbox" id="annualpack" onclick="annual()">
+</body>
+</html>

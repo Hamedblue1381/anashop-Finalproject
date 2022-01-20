@@ -1,0 +1,576 @@
+* {box-sizing: border-box;}
+body{
+box-sizing: border-box;
+font-family: MyFont;
+    font-size: 20px;
+    background-color: ghostwhite;
+}
+.js-focus-visible :focus:not(.focus-visible) {
+    outline: none;
+}
+.js-focus-visible .focus-visible {
+    outline: none;
+}
+
+@font-face {
+    font-family: 'MyFont';
+    src: url('fonts/myfonts.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.container2 input[type=text], input[type=password] {
+    width: 30%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+input:focus {
+    outline: none; !important;
+}
+
+.header {
+    background-image: url("images/header.png");
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 auto;
+    height: 385px;
+    position: relative;
+    overflow: hidden;
+
+}
+.navbar1{
+    background: rgba(0, 0, 0, 0.6);
+    position: absolute;
+    bottom:-48px;
+    width: 100%;
+    margin-bottom: 50px;
+    list-style:none;
+    padding:0;
+    text-align:center;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+    overflow: hidden;
+    float: none;
+}
+
+li {
+    float : none;
+    position:relative;
+
+
+}
+
+ul li {
+    display: inline-block;
+    border-right: 1px solid white;
+}
+
+ul li:last-child {
+    border-right:0;
+
+}
+.navbar1 a {
+    width: 120px;
+}
+
+a:link, a:visited {
+    display: block;
+
+    height: 50px;
+    font-weight: bold;
+    color: #FFFFFF;
+
+    text-align: center;
+    padding: 0 auto;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+-->
+Li:hover, li:active {
+   background-color: rgba(2,2,2,0.72);
+}
+
+#login {
+
+    position: absolute;
+    top: 30px;
+    right: -40px;
+
+}
+.menubut {
+    display: none;
+}
+
+.logo {
+    position: absolute;
+    top: 5px;
+    left: 40px;
+}
+.footer {
+    background: url(images/thumb.png) repeat-x center;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    color: white;
+    font-size:1em;
+
+}
+.top-left {
+    position: absolute;
+    top: 48px;
+    left: 56px;
+    color: whitesmoke;
+}
+.bottom-middle
+{
+    float: left;
+    text-align: center;
+    display: inline-block;
+    position: absolute;
+    top: 80%;
+    left: 37%;
+    justify-content: center;
+    align-items: center;
+    color: whitesmoke;
+}
+.cancelbtn {
+    position: relative;
+    width: auto;
+    padding: 10px 18px;
+    background-color: #f44336;
+}
+.loginbtn {
+    position: relative;
+    width: 30%;
+    left:46px;
+    background-color: #449d44;
+    padding: 10px 18px;
+
+}
+.imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+    position: relative;
+}
+
+img.avatar {
+    width: 40%;
+    border-radius: 50%;
+}
+
+.container2 {
+    padding: 5px;
+    margin: 0;
+text-align: center;
+
+}
+
+span.psw {
+    float: right;
+    padding-top: 16px;
+}
+
+/* The Modal (background) */
+.modal1 {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000000000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    padding-top: 50px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    width: 55%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button (x) */
+.close {
+    position: absolute;
+    right: 25px;
+    top: 0;
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: red;
+    cursor: pointer;
+}
+/* Add Zoom Animation */
+.animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+    from {-webkit-transform: scale(0)}
+    to {-webkit-transform: scale(1)}
+}
+
+@keyframes animatezoom {
+    from {transform: scale(0)}
+    to {transform: scale(1)}
+}
+
+.column1 {
+    float: left;
+    width: 25%;
+    position: relative;
+}
+
+.column2 {
+    float: right;
+    width: 68%;
+    height: 700px;
+    position: relative;
+    text-align: center;
+
+}
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+    span.psw {
+        display: block;
+        float: none;
+    }
+    .cancelbtn {
+        width: 100%;
+    }
+    .column1{
+        display: block;
+        text-align: center;
+    }
+    .column2 {
+      display: none;
+    }
+}
+.butttonhref {
+    display: block;
+    width: 120px;
+    height: 50px;
+    font-weight: bold;
+    color: #FFFFFF;
+
+    text-align: center;
+    padding: 0 auto;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+@media screen and (max-width: 850px) {
+    .footer {font-size: 16px; }
+    .top-left{left:15px}
+    .container2{
+        font-size: 16px;
+    }
+    .column1{
+        display: block;
+        text-align: center;
+    }
+    .column2 {
+        display: none;
+    }
+}
+
+#login {
+    top:-20px;
+}
+.miniform {
+    width: 45%;
+    left: 46px;
+    float: left;
+    position: relative;
+    height: auto;
+    margin: 25px;
+    padding: 8px;
+    background-color: white;
+    border-radius: 2px;
+    border: 1px;
+    font-size: 18px;
+    color: black;
+    box-shadow: 0px 0px 4px 4px grey;
+
+}
+
+.minform2 {
+    width: 360px;
+    left: 76px;
+    top:25px;
+    float: left;
+    position: relative;
+    height: 650px;
+    margin: 5px;
+    padding: 8px;
+    background-color: white;
+
+
+    font-size: 18px;
+    color: black;
+    box-shadow: 0px 0px 2px 2px grey;
+}
+
+@media screen and (max-width: 652px){
+    .footer{font-size: 13px; }
+    .top-left{left:10px}
+    .logo img{
+
+    }
+    .overlay1 {overflow-y: auto;}
+    .overlay1 a {font-size: 20px}
+    .overlay1 .closebtn1 {
+        font-size: 40px;
+        top: 15px;
+        right: 35px;
+    }
+    .modal-content{
+        width: 70%;
+        font-size: 11px;
+    }
+    .loginbtn {
+        left: 25px;
+    }
+    .logo {
+        left:-2px;
+    }
+    .menubut {
+        display:block;
+    }
+    #login {
+        top:20px;
+    }
+
+    .navbar1 {
+        display: none;
+    }
+    ul li:last-child{
+        border-right:1px solid white;
+
+    }
+    ul li{
+        border-left:1px solid white;
+    }
+
+    .container2{
+        font-size: 11px;
+    }
+    .miniform {
+        width: 80%;
+        height: 250px;
+        align-content: center;
+        text-align: center;
+    }
+    .column1{
+        display: block;
+        text-align: center;
+    }
+    .column2 {
+        display: none;
+    }
+    .main img{
+        display: none;
+    }
+
+
+}
+.overlay1 {
+    height: 0%;
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0, 0.9);
+    overflow-y: hidden;
+    transition: 0.5s;
+    text-align: center;
+
+}
+
+.overlay1-content {
+    position: relative;
+    top: 25%;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.overlay1 a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+    text-align: center;
+}
+
+.overlay1 a:hover, .overlay1 a:focus {
+    color: #f1f1f1;
+}
+
+.overlay1 .closebtn1 {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+}
+h1 {
+    text-align: center;
+}
+.separator {
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+.separator::before, .separator::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid #000;
+}
+.separator::before {
+    margin-right: .25em;
+}
+.separator::after {
+    margin-left: .25em;
+}
+
+.hr-text {
+    line-height: 1em;
+    position: absolute;
+    outline: 0;
+    border: 0;
+    color: black;
+    text-align: center;
+    height: 1.5em;
+    opacity: .5;
+}
+#boostbtn {
+    width:170px;
+    height: 100px;
+    border-radius: 66%;
+    padding: 4px;
+    margin: 8px;
+}
+#boostbtn:last-child::after {
+    content: none;
+}
+.boostbtn {
+    width:170px;
+    height: 100px;
+    border-radius: 66%;
+    padding: 4px;
+    margin: 8px;
+}
+.boostbtn:last-child::after {
+    content: none;
+}
+.corebtn .suppbtn {
+    background-color: whitesmoke;}
+
+
+.corebtn:hover {
+    background-color: #5bc0de; ! important
+}
+ .suppbtn:hover {
+    background-color: #5cb85c; ! important
+
+}
+
+
+.main:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+.boostmmr:after{
+    content: "";
+    display: table;
+    clear: both;
+}
+.calibrate:after{
+    content: "";
+    display: table;
+    clear: both;
+}
+#calibratediv:after{
+    content: "";
+    display: table;
+    clear: both;
+}
+.singledraft:after{
+    content: "";
+    display: table;
+    clear: both;
+}
+.battlecup:after{
+    content: "";
+    display: table;
+    clear: both;
+}
+.coach:after{
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.pmd-range-slider .noUi-handle:before,
+.pmd-range-slider.noUi-horizontal .noUi-handle-upper .noUi-tooltip:before, .pmd-range-slider.noUi-horizontal .noUi-handle-lower .noUi-tooltip:before,
+.pmd-range-slider .noUi-tooltip,
+.pmd-range-slider .noUi-connect{
+    background: #00b4cc !important;
+    color: #ffffff !important
+}
+
+.pmd-range-slider .noUi-pips .noUi-marker-horizontal{
+    background: #676767 !important;
+}
+.inputs{
+    width:150px;
+    height: 50px;
+    text-align: center;
+    display: inline-block;
+    border-radius: 45%;
+    top:10px;
+}
+
+.inputs:focus, .inputs:active {
+    outline: none !important;
+    box-shadow: none !important;
+}
+.container1 {
+    width: 98%;
+    display: inherit;
+
+}
+
+.container1 > div {
+    flex: 1; /*grow*/
+}
+.oldaccrank {
+    display: none
+}
+
+
