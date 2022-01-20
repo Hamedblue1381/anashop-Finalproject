@@ -10,3 +10,8 @@ import ana.sql into your phpmyadmin
 user : admin
 
 pass : adminadmin
+
+پروژه درس طراحی حامد ملک محمدی
+استاد دکتر مرتضی گل نژاد
+دانشکده شهید شمسی پور
+رشته کامپیوتر گرایش نرم افزار
