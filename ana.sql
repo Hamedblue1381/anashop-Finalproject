@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 20, 2022 at 03:15 PM
+-- Generation Time: Feb 08, 2022 at 09:26 AM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.1.26
 
@@ -21,6 +21,29 @@ SET time_zone = "+00:00";
 --
 -- Database: `ana`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `battlecup`
+--
+
+CREATE TABLE `battlecup` (
+  `btlcuptier` varchar(10) COLLATE utf8_persian_ci NOT NULL,
+  `btlcupteam` varchar(20) COLLATE utf8_persian_ci NOT NULL,
+  `username` varchar(20) COLLATE utf8_persian_ci NOT NULL,
+  `number` varchar(20) COLLATE utf8_persian_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_persian_ci;
+
+--
+-- Dumping data for table `battlecup`
+--
+
+INSERT INTO `battlecup` (`btlcuptier`, `btlcupteam`, `username`, `number`) VALUES
+('3', 'hame', 'admin', '1234'),
+('tier3 ', 'serooq', 'admin', '1234'),
+('tierA', 'hamed', 'admin', '1234'),
+('3', 'wAD', 'admin', '1234');
 
 -- --------------------------------------------------------
 
@@ -94,7 +117,6 @@ INSERT INTO `coach` (`coachmmr`, `role`, `username`, `number`) VALUES
 (3413, 'CORE', 'Hamed', '09227697761'),
 (3443, 'CORE', 'Hamed', '09227697761'),
 (4500, 'CORE', 'Hamed', '09227697761'),
-(0, '$rolec', '$username', '$number'),
 (6545, 'CORE', 'Hamed', '09227697761');
 
 -- --------------------------------------------------------
