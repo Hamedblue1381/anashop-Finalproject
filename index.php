@@ -349,11 +349,11 @@ else {
         <div class="container">
 
             <form action="action_calibrate.php" style="display: block" method="post" name="calibratesub">
-                <input type="button" value="New Acc" class="suppbtn" id="boostbtn" onclick="suppbutton()" required>
-                <input type="hidden"  id="newacc" name="newacc">
-                <i class="fas fa-slash"></i>
                 <input type="button"  value="Ranked Acc" class="corebtn" id="boostbtn"  onclick="corebutton()" required>
                 <input type="hidden"  id="oldacc"  name="oldacc">
+                <i class="fas fa-slash"></i>
+                <input type="button" value="New Acc" class="suppbtn" id="boostbtn" onclick="suppbutton()" required>
+                <input type="hidden"  id="newacc" name="newacc">
                 <div  id="cal-newacc-sep">
                 <div class="separator"><h1>درخواست</h1></div>
                 </div>
@@ -439,12 +439,87 @@ else {
         </form>
         </div>
     </div>
-<!--
+
         <div class="battlecup" id="battlecupdiv" style="display: none">
+            <div class="column1">
+                <div class="minform2">
+                    <h1>سفارش شما</h1>
+                    <div class="boostinfo"
+                         style="width: 100%;height: 70px;background-color: gray;text-align: center">
+
+                        <h2 id="startcoach" style="display: inline-block">
+                            <h2 id="output" style="display: inline-block">
+                            </h2>
+
+
+                        </h2>
+                        <h2 style="display: inline-block">
+battle cup
+                        </h2>
+
+
+
+                        </h2>
+
+                        <br/>  &nbsp;
+                        <div class="separator"><h1>تخفیفات</h1></div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="column2" >
+                <div class="separator"><h1>رول خود را انتخاب کنید</h1></div>
+                <form action="action_btlcup.php" style="display: block" method="post" name="btlcupsub">
+                    <input type="button" value="core" class="corebtn" id="boostbtn" onclick="corebutton()" required>
+                    <input type="hidden"  id="corestatusbcup" name="corestatusbcup">
+                    <i class="fas fa-slash"></i>
+                    <input type="button"  value="support" class="suppbtn" id="boostbtn" onclick="suppbutton()" required>
+                    <input type="hidden"  id="suppstatusbcup" name="suppstatusbcup">
+                    <div class="separator"> <h1>خود را وارد کنید tier</h1></div>
+                    <input type="text" class="inputs" id="btlcupinput" name="btlcuptier" >
+<!--              --><?php //
+//                    if(isset($_SESSION["status"]) && $_SESSION["status"]===true)
+//                    {
+//                        ?>
+<!---->
+<!--                     <input type="button" class="boostbtn" value="Submit" onclick="battlecupsubmit()">-->
+<!--                        --><?php
+//                    }
+//                    else
+//                    {
+//                        ?>
+<!---->
+<!--                        <input type="button" class="boostbtn" value="ابتدا وارد شوید" onclick="boostsubmitnotsigned()">-->
+<!--                        --><?php
+//                    }
+//
+//                    ?><!-- -->
+<!--              -->
+                    <div class="separator"> <h1>نام تیم خود را وارد کنید</h1></div>
+                    <input type="text" class="inputs" id="btlcupteaminput" name="btlcupteam" >
+                    <?php
+                    if(isset($_SESSION["status"]) && $_SESSION["status"]===true)
+                    {
+                        ?>
+
+                        <input type="button" class="boostbtn" value="Submit" onclick="battlecupsubmit()">
+                        <?php
+                    }
+                    else
+                    {
+                        ?>
+
+                        <input type="button" class="boostbtn" value="ابتدا وارد شوید" onclick="boostsubmitnotsigned()">
+                        <?php
+                    }
+                    ?>
+                </form>
+            </div>
         </div>
             <div class="singledraft" id="singledraftdiv" style="display: none">
+
             </div>
--->
+
 
 </body>
 <!-- Jquery js -->
@@ -670,6 +745,7 @@ else {
     }
 
 
+
 </script>
 <script>
     var accstatus = document.getElementById('oldaccrank').style.display;
@@ -701,28 +777,36 @@ else {
             document.getElementsByClassName('suppbtn')[1].style.backgroundColor='whitesmoke';
             document.getElementsByClassName('corebtn')[2].style.backgroundColor='#5bc0de';
             document.getElementsByClassName('suppbtn')[2].style.backgroundColor='whitesmoke';
+            document.getElementsByClassName('corebtn')[3].style.backgroundColor='#5bc0de';
+            document.getElementsByClassName('suppbtn')[3].style.backgroundColor='whitesmoke';
             corestatus=true;
             document.getElementById('oldaccrank').style.display='block';
             document.getElementById('cal-newacc-sep').style.display='none';
             corestatusmain=true;
             document.getElementById('corestatus').value='CORE';
             document.getElementById('corestatusc').value='CORE';
+            document.getElementById('corestatusbcup').value='CORE';
             suppstatus=false;
             suppstatusmain=false;
             document.getElementById('suppstatus').value = '';
             document.getElementById('suppstatusc').value = '';
+            document.getElementById('suppstatusbcup').value = '';
+
         }
         else
         {
             document.getElementsByClassName('corebtn')[0].style.backgroundColor='whitesmoke';
             document.getElementsByClassName('corebtn')[1].style.backgroundColor='whitesmoke';
             document.getElementsByClassName('corebtn')[2].style.backgroundColor='whitesmoke';
+            document.getElementsByClassName('corebtn')[3].style.backgroundColor='whitesmoke';
             corestatus=false;
             document.getElementById('oldaccrank').style.display='none';
             document.getElementById('cal-newacc-sep').style.display='block';
             corestatusmain=true;
             document.getElementById('corestatus').value = '';
             document.getElementById('corestatusc').value = '';
+            document.getElementById('corestatusbcup').value = '';
+
         }
     }
     function suppbutton() {
@@ -737,28 +821,34 @@ else {
             document.getElementsByClassName('suppbtn')[1].style.backgroundColor='#5cb85c';
             document.getElementsByClassName('corebtn')[2].style.backgroundColor='whitesmoke';
             document.getElementsByClassName('suppbtn')[2].style.backgroundColor='#5cb85c';
+            document.getElementsByClassName('corebtn')[3].style.backgroundColor='whitesmoke';
+            document.getElementsByClassName('suppbtn')[3].style.backgroundColor='#5cb85c';
             suppstatus=true;
             document.getElementById('oldaccrank').style.display='none';
             document.getElementById('cal-newacc-sep').style.display='block';
             suppstatusmain=true;
             document.getElementById('suppstatus').value=' SUPPORT ';
             document.getElementById('suppstatusc').value=' SUPPORT ';
+            document.getElementById('suppstatusbcup').value=' SUPPORT ';
             corestatus=false
             corestatusmain=false
             document.getElementById('corestatus').value = '';
             document.getElementById('corestatusc').value = '';
+            document.getElementById('corestatusbcup').value = '';
         }
         else {
             window.alert("its not working");
             document.getElementsByClassName('suppbtn')[0].style.backgroundColor='whitesmoke';
             document.getElementsByClassName('suppbtn')[1].style.backgroundColor='whitesmoke';
             document.getElementsByClassName('suppbtn')[2].style.backgroundColor='whitesmoke';
+            document.getElementsByClassName('suppbtn')[3].style.backgroundColor='whitesmoke';
             suppstatus=false;
             document.getElementById('oldaccrank').style.display='block';
             document.getElementById('cal-newacc-sep').style.display='none';
             suppstatusmain=false;
             document.getElementById('suppstatus').value = '';
             document.getElementById('suppstatusc').value = '';
+            document.getElementById('suppstatuscup').value = '';
         }
     }
 
@@ -779,6 +869,14 @@ else {
 
         if(corestatusmain || suppstatusmain == true) {
             document.coachsub.submit();
+        }
+        else { window.alert('لطفا رول خود را انتخاب کنید'); }
+
+    }
+    function battlecupsubmit() {
+
+        if(corestatusmain || suppstatusmain == true) {
+            document.btlcupsub.submit();
         }
         else { window.alert('لطفا رول خود را انتخاب کنید'); }
 
