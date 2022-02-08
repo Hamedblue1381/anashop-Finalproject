@@ -52,8 +52,8 @@
                 document.getElementById('boost').style.display='none';
                 document.getElementById('calibratediv').style.display='none';
                 // -> در اپدیت های بعدی سایت اضافه میشود
-              //  document.getElementById('singledraftdiv').style.display='none';
-               // document.getElementById('battlecupdiv').style.display='none';
+                document.getElementById('singledraftdiv').style.display='none';
+                document.getElementById('battlecupdiv').style.display='none';
 
                 main_status = false;
                 coach_status = true;
@@ -66,8 +66,8 @@
                 document.getElementById('boost').style.display='none';
                 document.getElementById('coachdiv').style.display='none';
                 // -> در اپدیت های بعدی سایت اضافه میشود
-               // document.getElementById('singledraftdiv').style.display='none';
-               // document.getElementById('battlecupdiv').style.display='none';
+               document.getElementById('singledraftdiv').style.display='none';
+                document.getElementById('battlecupdiv').style.display='none';
                 main_status = true;
                 coach_status = false;
 
@@ -82,13 +82,14 @@
                 document.getElementById('main').style.display='none';
                 document.getElementById('coachdiv').style.display='none';
                 // -> در اپدیت های بعدی سایت اضافه میشود
-                //document.getElementById('singledraftdiv').style.display='none';
-                //document.getElementById('battlecupdiv').style.display='none';
+                document.getElementById('singledraftdiv').style.display='none';
+                document.getElementById('battlecupdiv').style.display='none';
                 document.getElementById('calibratediv').style.display='none';
                 main_status = false;
                 calibrate_status = false;
                 coach_status = false;
                 boost_status = true;
+                battlecup_status =false;
 
             }  else if (boost_status==true && main_status==false) {
                 document.getElementById('main').style.display = 'block';
@@ -113,12 +114,13 @@
                     document.getElementById('boost').style.display='none';
                     document.getElementById('coachdiv').style.display='none';
                     // -> در اپدیت های بعدی سایت اضافه میشود
-                   // document.getElementById('singledraftdiv').style.display='none';
-                   // document.getElementById('battlecupdiv').style.display='none';
+                    document.getElementById('singledraftdiv').style.display='none';
+                    document.getElementById('battlecupdiv').style.display='none';
 
                     main_status = false;
                     coach_status = false;
                     boost_status = false;
+                    battlecup_status =false;
                     calibrate_status = true;
 
                 } else if (calibrate_status==true && main_status==false) {
@@ -127,13 +129,43 @@
                     document.getElementById('boost').style.display='none';
                     document.getElementById('coachdiv').style.display='none';
                     // -> در اپدیت های بعدی سایت اضافه میشود
-                    // document.getElementById('singledraftdiv').style.display='none';
-                   // document.getElementById('battlecupdiv').style.display='none';
+                    document.getElementById('singledraftdiv').style.display='none';
+                    document.getElementById('battlecupdiv').style.display='none';
                     main_status = true;
                     calibrate_status = false;
 
                 }
             }
+        function battlecup() {
+            if (battlecup_status==false){
+                document.getElementById("myNav1").style.height = "0%";
+                document.getElementById("coachdiv").style.display = 'none';
+                document.getElementById('main').style.display = 'none';
+                document.getElementById('boost').style.display='none';
+                document.getElementById('calibratediv').style.display='none';
+                // -> در اپدیت های بعدی سایت اضافه میشود
+                document.getElementById('singledraftdiv').style.display='none';
+                document.getElementById('battlecupdiv').style.display='block';
+
+                main_status = false;
+                battlecup_status = true;
+                coach_status = false;
+                calibrate_status = false;
+                boost_status = false;
+
+            } else if(battlecup_status==true && main_status==false) {
+                document.getElementById('main').style.display = 'block';
+                document.getElementById('calibratediv').style.display = 'none';
+                document.getElementById('boost').style.display='none';
+                document.getElementById('coachdiv').style.display='none';
+                // -> در اپدیت های بعدی سایت اضافه میشود
+                document.getElementById('singledraftdiv').style.display='none';
+                document.getElementById('battlecupdiv').style.display='none';
+                main_status = true;
+                battlecup_status = false;
+
+            }
+        }
 
 
     </script>
@@ -153,10 +185,10 @@
         <div class="overlay1-content" style="text-align: center">
             <a href="#" onclick="boost()">بوست MMR</a>
             <a href="#" onclick="coach()">کوچینگ</a>
-            <!-- در اپدیت های بعدی سایت اضافه میشود
+
             <a href="#" onclick="calibrate()">Calibrate</a>
             <a href="#" onclick="singledraft()">Single Draft</a>
-            --->
+
         </div>
     </div>
        <?php
@@ -296,10 +328,11 @@
 
         <li><a href="#" id="calib" onclick="calibrate()">کالیبریت</a></li>
         <!-- در اپدیت های بعدی سایت اضافه میشود
+             -->
       <li><a href="#" id="battlecup" onclick="battlecup()">بوست بتل کاپ</a></li>
 
       <li><a href="#" id="singledraft" onclick="singledraft()">سینگل درفت</a></li>
-      -->
+
   </ul>
 </div>
 
